@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mBtnAlertDialog;
+    Button mBtnAlertDialog, mBtnButtoncustomAlertDialog;
     int mPosition = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mBtnAlertDialog = findViewById(R.id.ButtonShowAlertDialog);
+        mBtnButtoncustomAlertDialog= findViewById(R.id.ButtoncustomAlertDialog);
+
+        mBtnButtoncustomAlertDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, android.R.style.Theme_DeviceDefault_Dialog_MinWidth);
+
+            }
+        });
 
 
         mBtnAlertDialog.setOnClickListener(new View.OnClickListener() {
